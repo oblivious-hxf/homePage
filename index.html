@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>小兵的回忆</title>
+<link rel="stylesheet" type="text/css" href="css/homepage.css"/>
+<script src="javaScript/HomePage.js" type="text/javascript"></script>
+
+<link rel="shortcut icon" href="file:///E:/HTML/myHomePage/image/author.ico" type="image/x-icon"/>
+
+
+</head>
+<body>
+
+<div id="slidebarid" class="slidebar" onmousemove="allHidden()">
+<ul>
+<li class="slidebar-items" onclick="openCnBing()"><img src="http://cn.bing.com/favicon.ico" /><p id="cnbing">必应</P></li>
+<li class="slidebar-items" onclick="openBing()"><img src="http://cn.bing.com/favicon.ico" /><p id="bing">bing</p></li>
+<li class="slidebar-items" onclick="openGoogle()"><img src="http://7q5dsg.com1.z0.glb.clouddn.com/favicon/favicon.ico" /><p id="google">google</P></li>
+<li class="slidebar-items" onclick="openZhihu()"><img src="https://static.zhihu.com/static/favicon.ico" /><p id="zhihu">知乎</P></li>
+<li class="slidebar-items" onclick="openBilibili()"><img src="http://static.hdslb.com/images/favicon.ico" /><p id="bilibili">哔哩哔哩</P></li>
+<li class="slidebar-items" onclick="openWeibo()"><img src="http://weibo.com/favicon.ico" /><p id="weibo">微博</P></li>
+<li class="slidebar-items" onclick="openYoudao()"><img src="http://shared.ydstatic.com/images/favicon.ico" /><p id="youdao">有道词典</P></li>
+<li class="slidebar-items" onclick="openTaobao()"><img src="http://7q5dsg.com1.z0.glb.clouddn.com/@/favicon/taobao/favicon.ico" /><p id="taobao">淘宝</P></li>
+<li class="slidebar-items" onclick="openJingdong()"><img src="http://www.jd.com/favicon.ico" /><p id="jingdong">京东</P></li>
+<li class="slidebar-items" onclick="openWP7()"><img src="http://static.tieba.baidu.com/tb/favicon.ico" /><p id="wp7">wp7吧</P></li>
+<li class="slidebar-items" onclick="openWangyi()"><img src="http://img1.cache.netease.com/www/logo/logo-ipad-icon.png" /><p id="Wangyi">网易新闻</P></li>
+<li class="slidebar-items" onclick="openTiedaobu()"><img src="http://www.12306.cn/mormhweb/images/favicon.ico" /><p id="tiedaobu">12306</P></li>
+</ul>
+</div>
+
+<div id="public-header-id" class="public-header" >
+<ul>
+
+<li id="author" class="authorclass" title="作者"><address><img src="image/author.png" /><a href="mailto:1063216605@qq.com">小兵的回忆</a></address></li>
+
+<li id="skin" class="skinclass"  onmouseover="skinListShow()"><img src="image/skin.png" /><p>皮肤</p></li>       
+
+<li id="myfont" class="myfontclass" onmouseover="fontListShow()"><img src="image/font.png" /><p>字体</p></li>
+</ul>
+
+<ul  id="skinBox" class="skinList" onmouseover="skinListShow()" onmouseout="skinListHidden()">
+
+<li id="defaultSkin" class="skin-items" onclick="DefaultSkinStyle()">默认</li>
+<li id="greenSkin" class="skin-items" onclick="GreenSkinStyle()">护眼</li>
+<li id="treeSkin" class="skin-items" onclick="treeSkinStyle()">木纹</li>
+<li id="coolBlackSkin" class="skin-items" onclick="coolBlackSkinStyle()">酷黑</li>
+</ul>
+
+<ul id="fontBox" class="fontList" onmouseover="fontListShow()" onmouseout="fontListHidden()">
+
+<li id="defaultFont" class="myfont-items" onclick="defaultFontStyle()">默认</li>
+<li id="songti" class="myfont-items" onclick="songtiFontStyle()">仿宋</li>
+<li id="kaishu" class="myfont-items" onclick="kaishuFontStyle()">楷书</li>
+<li id="lishu" class="myfont-items" onclick="lishuFontStyle()">隶书</li>
+
+</ul>
+
+</div> 
+
+<div class="main" onmouseover="allHidden()">
+<iframe id="mainFrame" class="engine" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" style="background-color:#fff" src="http://global.bing.com/?FORM=HPCNEN&setmkt=en-us&setlang=en-us"></iframe>
+</div>
+
+
+</body>
+
+</html>
