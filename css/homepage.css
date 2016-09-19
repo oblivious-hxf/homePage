@@ -1,162 +1,65 @@
 
-body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,input,form,a,p,textarea,img,p{
+*{
 	margin:0;
 	padding:0;
 	}
 
 ol,ul,li{
 	list-style:none;
+	text-transform:capitalize;
 }
 
 a{
 	text-decoration:none;
+	color:#fff;
 }
 
-a:link {color:black;}
-a:visited {color:black;} /* 已被访问的链接 */
-a:hover {color:black;}   /* 鼠标指针移动到链接上 */
-a:active {color:black;}  /* 正在被点击的链接 */
+.clear {clear:both; *display:inline;/*IE only*/}
 
+/*menu*/
+#menu {margin:0px auto; display:block; width:100%; height:34px;background:#3f240e;position: absolute;}
+#nav {display:block;}
+#nav .mainlevel {float:left;  text-align:center; display:block;}
+#nav .mainlevel a {color:#fff; text-decoration:none; line-height:34px; height:34px; text-align:center; padding:0 15px; display:block; _width:48px;}
+#nav .mainlevel a:hover {color:#3f240e; text-decoration:none; background:#678900  0 0 repeat-x;}
+#nav .mainlevel ul {position:absolute; display:none; *width:2000px;/*IE is great need, width>=li.length*/}
+#nav .mainlevel li {float:left; clear:left;background:#3f240e;width:105px;}
+#nav .mainlevel li a {padding:0 12px; line-height:24px; height:24px; display:block; _padding-bottom:6px;/*IE6 only*/}
+#nav .mainlevel li a:hover {color:#3f240e; text-decoration:none; background:#678900  0 0 repeat-x;}
+#nav li a em/*input an em tag as a space*/ {padding:0 3px;}
+.Triangle_con {height:0px; background: 36px 0 no-repeat; display:block; _margin-bottom:-6px;/*IE6 only*/}
 
-.slidebar{
-	float:left;
-	position:fixed;
-	height:100%;
-	width:7.5%;
-	margin-top:30px;
-	background:url(../image/defaultSkin.png) repeat-y;
+#author-png{
+	height: 30px;
+	width: 30px;
 }
 
-.slidebar-items{
-	float:left;
-	clear:left;
-	cursor:pointer;
+.slide-nav-items img{
+	width: 18px;
+	height: 18px;
 }
 
-.slidebar-items img{
-	height:18px;
-	width:18px;
-	margin:8px 8px;
+.mainlevel img{
+	padding-right: 4px;
+	width: 25px;
+	height: 25px;
 }
 
-.slidebar-items p{
-	margin-top:8px;
+.slide-nav{
+	position: absolute;
+	width: 150px;
+	margin-top: 34px;
+	background:#3f240e;
+}
+
+.slide-nav-items{
+	display: block;
+	margin:10px 5px 10px 15px;
+}
+
+.slide-nav-items a{
 	text-align:center;
-	margin-left:5px;
-}
-  
-.slidebar-items img,p{
-	float:left;
-}
-  
-  
-.public-header{ 
-    position:fixed;
-	height:30px;
-    width:100%;
-    margin:0 auto;
-	background:url(../image/defaultSkin.png) repeat-x;
-	z-index:10;
-   }
-
-.authorclass{
-	float:left;
-	cursor:pointer;
-}
-   
-.authorclass img{
-	height:20px;
-	width:20px;
-}   
-   
-.myfontclass img{
-	height:20px;
-	width:20px;
-}   
-
-.skinclass img{
-	height:20px;
-	width:20px;
-}    
- 
-.authorclass p{
-	text-align:center;
-	margin-left:10px;
-}
-   
-.authorclass img,p{
-	display:block;
-	float:left;
-}   
-   
-.skinclass{
-	float:left;
-}
-
-.skinList{
-	float:left;
-	clear:left;
-	position:absolute;
-	margin-top:30px;
-	margin-left:150px;
-	background-color:#E3E3E3;
-    visibility:hidden;
-}
-
-
-.fontList{
-	float:left;
-	clear:left;
-	position:absolute;
-	margin-top:30px;
-	margin-left:230px;
-	background-color:#E3E3E3;
-    visibility:hidden;
-}
-
-.skin-items{
-	cursor:pointer;
-}   
-   
-.skinclass img,p{
-	display:block;
-	float:left;
-}	
-   
-.skinclass p{
-	text-align:center;
-	margin-left:10px;
-}   
-   
-.myfontclass{
-	float:left;
-}
-
-.myfontclass img,p{
-	display:block;
-	float:left;
-}
-
-.myfontclass p{
-	text-align:center;
-	margin-left:10px;
-}
-
-.myfont-items{
-	cursor:pointer;
-}
-
-.public-header ul li{
-	margin:6px 10px;
-}
-
-
-.engine{
-	display:block;
-	float:left;
-	width:92.5%;
-	height:96%;
-	position:absolute;
-	margin-top:30px;
-	margin-left:120px;
+	}
+.slide-nav-items img{
+	vertical-align:middle;
 }
