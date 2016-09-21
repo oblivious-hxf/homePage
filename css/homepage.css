@@ -1,5 +1,5 @@
 
-body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,input,form,a,p,textarea{
+body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,input,form,a,p,textarea,img{
 	margin:0;
 	padding:0;
 	}
@@ -21,8 +21,8 @@ a{
 .mainlevel {float:left; text-align:center; display:block;}
 .mainlevel a {text-decoration:none; line-height:34px; height:34px; text-align:center; padding:0 15px; display:block;}
 .mainlevel a:hover { text-decoration:none;}
-.mainlevel li {float:left;width:80px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
-.mainlevel li a{border-radius:10px;border-radius:10px;}
+.mainlevel li {float:left;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
+.mainlevel li a{border-radius:10px; }
 .mainlevel li a:hover { text-decoration:none; background:#32CD32;}
 .sub-nav{background:#e5eecc;border-bottom-right-radius:10px;border-bottom-left-radius:10px;position:absolute; display:none;}
 .sub-list{
@@ -34,7 +34,7 @@ a{
 	height: 18px;
 }
 
-.mainlevel img{
+.mainlevel a img{
 	padding-right: 4px;
 	width: 25px;
 	height: 25px;
@@ -43,7 +43,6 @@ a{
 .wechat{
 	height: 150px;
 	width: 150px;
-	margin-right: 70px;
 }
 .wechat img{
 	cursor: pointer;
@@ -54,6 +53,15 @@ a{
 #author-png{
 	height: 30px;
 	width: 30px;
+}
+
+#sub-list-sort{
+	transform:rotate(90deg);
+-ms-transform:rotate(90deg); /* Internet Explorer */
+-moz-transform:rotate(90deg); /* Firefox */
+-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+-o-transform:rotate(90deg); /* Opera */
+	clear: left;
 }
 
 
@@ -75,7 +83,7 @@ a{
 	display: block;
 	overflow: hidden;
 	cursor: pointer;
-	margin:10px 0px 10px 10px;
+	padding:6px 0px 8px 20px;
 }
 
 .slide-nav-items a{
@@ -94,3 +102,4 @@ a{
 	width: 1450px;
 	float: left;
 }
+

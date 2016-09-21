@@ -1,20 +1,57 @@
-$(document).ready(function () {
+$(document).ready(function () { 
 
 			var skinCookie=getCookie("skin");
 			var aColorCookie=getCookie("aColor");
 			var fontCookie=getCookie("font");
+			var homepageCookie=getCookie("homepage");
+			var widthCookie=getCookie("width");
+			if (homepageCookie=="") {
+				homepageCookie="https://www.baidu.com/";
+			}
+			setCookie("skin",skinCookie,168);
+        	setCookie("aColor",aColorCookie,168);
+        	setCookie("font",fontCookie,168);
+        	setCookie("homepage",homepageCookie,168);
+        	setCookie("width",widthCookie,168);
+
 
 			$(".public-header").css("background",skinCookie);
         	$(".slide-nav").css("background",skinCookie);
         	$(".sub-nav").css("background",skinCookie);
         	$("a").css("color",aColorCookie);
         	$("body").css("font-family",fontCookie);
+        	$("#engine").attr("src",homepageCookie);
+        	
+
+        	var slideNavWidth=$(".slide-nav").width();
+        	var isDefaultWidth="";
+        	
 
 
 			var engineHeight=$(window).height()-34;
-        	var engineWidth=$(window).width()-150;
+        	var engineWidth=$(window).width()-slideNavWidth;
         	$("#engine").height(engineHeight);
         	$("#engine").width(engineWidth);
+
+
+
+
+        	if (widthCookie=="") {
+        		isDefaultWidth="default-width";
+        	}
+        	else if(widthCookie=="change-width"){
+        		isDefaultWidth=widthCookie;
+        		$(".slide-nav-items a").css("display","none");
+        		$(".slide-nav").width(60);
+        		slideNavWidth=$(".slide-nav").width();
+        		engineWidth=$(window).width()-slideNavWidth;
+        		$("#engine").width(engineWidth);
+        		$("#engine").height(engineHeight);
+        		$("#engine").css("margin-left","-90px");
+        		$(".slide-nav-items").css("padding-left","12px");
+        	}
+
+
 
             $('li.mainlevel').mousemove(function () {
                 $(this).find('ul').slideDown("1000"); //you can give it a speed
@@ -23,16 +60,42 @@ $(document).ready(function () {
                 $(this).find('ul').slideUp("fast");
             });
 
-            $("li.slide-nav-items a").click(function(){
-            	if($(this).attr("data")){
-            	var aimURL=$(this).attr("data");
+
+
+            $(".slide-nav-items").click(function(){
+            	
+            	var aimURL="";
+            	$(".slide-nav-items").css("background","");
+            	$(this).css("background","#32CD32");
+            	if($(this).children("a").attr("data")){
+            	aimURL=$(this).children("a").attr("data");
             	$("#engine").attr("src",aimURL);
             }
             else{
-            	$(this).attr('target', '_blank');
+            	aimURL=$(this).children("a").attr("href");
+            	window.open(aimURL);
             }
+          
 
             });
+
+
+
+            $(".slide-nav-items").dblclick(function(){
+            	
+            	var homeURL="";
+            	if($(this).children("a").attr("data")){
+            	homeURL=$(this).children("a").attr("data");
+            	setCookie("homepage",homeURL,168);
+            	
+            }
+            
+
+            });
+
+
+
+
 
         	$("[href$='skin']").click(function(){
         		var skin=$(this).attr("href");
@@ -111,6 +174,46 @@ $(document).ready(function () {
         			case "#regular-script-font":
         			$("body").css("font-family","STKaiti,Monospace");
         			setCookie("font","STKaiti,Monospace",168);
+        			break;
+        		}
+        	});
+
+
+        	$("[href$='setting']").click(function(){
+        		var setting=$(this).attr("href");
+        		switch(setting){
+        			case "#homepage-setting":
+        			break;
+
+        			case "#width-setting":
+        			if (isDefaultWidth=="default-width") {
+        				$(".slide-nav-items a").css("display","none");
+        				$(".slide-nav").width(60);
+        				slideNavWidth=$(".slide-nav").width();
+        				engineWidth=$(window).width()-slideNavWidth;
+        				$("#engine").width(engineWidth);
+        				$("#engine").height(engineHeight);
+        				$("#engine").css("margin-left","-90px");
+        				$(".slide-nav-items").css("padding-left","12px");
+        				isDefaultWidth="change-width";
+        				setCookie("width",isDefaultWidth,168);
+        			}
+        			else{
+        				$(".slide-nav-items a").css("display","");
+        				$(".slide-nav").width(150);
+        				slideNavWidth=$(".slide-nav").width();
+        				engineWidth=$(window).width()-slideNavWidth;
+        				$("#engine").width(engineWidth);
+        				$("#engine").height(engineHeight);
+        				$("#engine").css("margin-left","");
+        				$(".slide-nav-items").css("padding-left","20px");
+        				isDefaultWidth="default-width";
+        				setCookie("width",isDefaultWidth,168);
+
+        			}
+        			break;
+
+        			case "#list-sort-setting":
         			break;
         		}
         	});
