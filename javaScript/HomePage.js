@@ -61,40 +61,53 @@ $(document).ready(function () {
             });
 
 
+            //定义setTimeout执行方法
+			var TimeFn = null;
 
-            $(".slide-nav-items").click(function(){
-            	
-            	var aimURL="";
+
+			$(".slide-nav-items").click(function(){
+				var that=this;
+				// 取消上次延时未执行的方法
+    			clearTimeout(TimeFn);
+    			//执行延时
+    			TimeFn = setTimeout(function(){
+        		//do function在此处写单击事件要执行的代码
+        		
+
+        		var aimURL="";
             	$(".slide-nav-items").css("background","");
-            	$(this).css("background","#32CD32");
-            	if($(this).children("a").attr("data")){
-            	aimURL=$(this).children("a").attr("data");
+            	$(that).css("background","#32CD32");
+            	if($(that).children("a").attr("data")){
+            	aimURL=$(that).children("a").attr("data");
             	$("#engine").attr("src",aimURL);
             }
             else{
-            	aimURL=$(this).children("a").attr("href");
+            	aimURL=$(that).children("a").attr("href");
             	window.open(aimURL);
             }
-          
+        		
+    			},300);
+            	
 
             });
 
 
 
-            $(".slide-nav-items").dblclick(function(){
-            	
+
+             $(".slide-nav-items").dblclick(function(){
+             	// 取消上次延时未执行的方法
+    			clearTimeout(TimeFn);
+    			//双击事件的执行代码
+             	
             	var homeURL="";
             	if($(this).children("a").attr("data")){
             	homeURL=$(this).children("a").attr("data");
+            	var homename=prompt("输入网址设为默认首页：",homeURL);
+            	if (homename!=null && homename!=""){
             	setCookie("homepage",homeURL,168);
-            	
-            }
-            
-
+            	}	
+            	}
             });
-
-
-
 
 
         	$("[href$='skin']").click(function(){
@@ -183,6 +196,7 @@ $(document).ready(function () {
         		var setting=$(this).attr("href");
         		switch(setting){
         			case "#homepage-setting":
+        			alert("双击右侧书签设置默认打开页面。")
         			break;
 
         			case "#width-setting":
@@ -214,6 +228,7 @@ $(document).ready(function () {
         			break;
 
         			case "#list-sort-setting":
+        			alert("长按右侧书签拖动排序。")
         			break;
         		}
         	});
