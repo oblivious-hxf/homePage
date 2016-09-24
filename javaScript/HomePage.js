@@ -1,3 +1,10 @@
+var slideNavWidth=$(".slide-nav").width();
+var isDefaultWidth="";
+var engineHeight=$(window).height()-34;
+var engineWidth=$(window).width()-slideNavWidth;
+
+
+
 $(document).ready(function () { 
 
 			var skinCookie=getCookie("skin");
@@ -23,13 +30,7 @@ $(document).ready(function () {
         	$("#engine").attr("src",homepageCookie);
         	
 
-        	var slideNavWidth=$(".slide-nav").width();
-        	var isDefaultWidth="";
         	
-
-
-			var engineHeight=$(window).height()-34;
-        	var engineWidth=$(window).width()-slideNavWidth;
         	$("#engine").height(engineHeight);
         	$("#engine").width(engineWidth);
 
@@ -40,15 +41,7 @@ $(document).ready(function () {
         		isDefaultWidth="default-width";
         	}
         	else if(widthCookie=="change-width"){
-        		isDefaultWidth=widthCookie;
-        		$(".slide-nav-items a").css("display","none");
-        		$(".slide-nav").width(60);
-        		slideNavWidth=$(".slide-nav").width();
-        		engineWidth=$(window).width()-slideNavWidth;
-        		$("#engine").width(engineWidth);
-        		$("#engine").height(engineHeight);
-        		$("#engine").css("margin-left","-90px");
-        		$(".slide-nav-items").css("padding-left","12px");
+        		changeDefaultWidth();
         	}
 
 
@@ -114,57 +107,27 @@ $(document).ready(function () {
         		var skin=$(this).attr("href");
         		switch(skin){
         			case "#default-skin":
-        			$(".public-header").css("background","#e5eecc");
-        			$(".slide-nav").css("background","#e5eecc");
-        			$(".sub-nav").css("background","#e5eecc");
-        			$("a").css("color","#000");
-        			setCookie("skin","#e5eecc",168);
-        			setCookie("aColor","#000",168);
+        			settingSkin("#e5eecc","#000");
         			break;
 
         			case "#wood-skin":
-        			$(".public-header").css("background","url(image/wood-skin.jpg)");
-        			$(".slide-nav").css("background","url(image/wood-skin.jpg)");
-        			$(".sub-nav").css("background","url(image/wood-skin.jpg)");
-        			$("a").css("color","#000");
-        			setCookie("skin","url(image/wood-skin.jpg)",168);
-        			setCookie("aColor","#000",168);
+        			settingSkin("url(image/wood-skin.jpg)","#000");
         			break;
 
         			case "#blue-skin":
-        			$(".public-header").css("background","url(image/blue-skin.jpg)");
-        			$(".slide-nav").css("background","url(image/blue-skin.jpg)");
-        			$(".sub-nav").css("background","url(image/blue-skin.jpg)");
-        			$("a").css("color","#000");
-        			setCookie("skin","url(image/blue-skin.jpg)",168);
-        			setCookie("aColor","#000",168);
+        			settingSkin("url(image/blue-skin.jpg)","#000");
         			break;
 
         			case "#black-skin":
-        			$(".public-header").css("background","url(image/black-skin.jpg)");
-        			$(".slide-nav").css("background","url(image/black-skin.jpg)");
-        			$(".sub-nav").css("background","url(image/black-skin.jpg)");
-        			$("a").css("color","#e8e8e8");
-        			setCookie("skin","url(image/black-skin.jpg)",168);
-        			setCookie("aColor","#e8e8e8",168);
+        			settingSkin("url(image/black-skin.jpg)","#e8e8e8");
         			break;
 
         			case "#bi-color-skin":
-        			$(".public-header").css("background","url(image/bi-color.jpg)");
-        			$(".slide-nav").css("background","url(image/bi-color.jpg)");
-        			$(".sub-nav").css("background","url(image/bi-color.jpg)");
-        			$("a").css("color","#000");
-        			setCookie("skin","url(image/bi-color.jpg)",168);
-        			setCookie("aColor","#000",168);
+        			settingSkin("url(image/bi-color.jpg)","#000");
         			break;
 
         			case "#wallpaper-skin":
-        			$(".public-header").css("background","url(image/wallpaper-skin.jpg)");
-        			$(".slide-nav").css("background","url(image/wallpaper-skin.jpg)");
-        			$(".sub-nav").css("background","url(image/wallpaper-skin.jpg)");
-        			$("a").css("color","#000");
-        			setCookie("skin","url(image/wallpaper-skin.jpg)",168);
-        			setCookie("aColor","#000",168);
+        			settingSkin("url(image/wallpaper-skin.jpg)","#000");
         			break;
 
         		}
@@ -175,19 +138,15 @@ $(document).ready(function () {
         		var font=$(this).attr("href");
         		switch(font){
         			case "#default-font":
-        			$("body").css("font-family","");
-        			setCookie("font","",168);
+        			settingFont("");
         			break;
 
         			case "#traditional-font":
-        			$("body").css("font-family","Cursive");
-        			setCookie("font","Cursive",168);
+        			settingFont("Cursive");
         			break;
 
         			case "#regular-script-font":
-        			$("body").css("font-family","STKaiti,Monospace");
-        			setCookie("font","STKaiti,Monospace",168);
-        			break;
+        			settingFont("STKaiti,Monospace");
         		}
         	});
 
@@ -201,28 +160,10 @@ $(document).ready(function () {
 
         			case "#width-setting":
         			if (isDefaultWidth=="default-width") {
-        				$(".slide-nav-items a").css("display","none");
-        				$(".slide-nav").width(60);
-        				slideNavWidth=$(".slide-nav").width();
-        				engineWidth=$(window).width()-slideNavWidth;
-        				$("#engine").width(engineWidth);
-        				$("#engine").height(engineHeight);
-        				$("#engine").css("margin-left","-90px");
-        				$(".slide-nav-items").css("padding-left","12px");
-        				isDefaultWidth="change-width";
-        				setCookie("width",isDefaultWidth,168);
+        				changeDefaultWidth();
         			}
         			else{
-        				$(".slide-nav-items a").css("display","");
-        				$(".slide-nav").width(150);
-        				slideNavWidth=$(".slide-nav").width();
-        				engineWidth=$(window).width()-slideNavWidth;
-        				$("#engine").width(engineWidth);
-        				$("#engine").height(engineHeight);
-        				$("#engine").css("margin-left","");
-        				$(".slide-nav-items").css("padding-left","20px");
-        				isDefaultWidth="default-width";
-        				setCookie("width",isDefaultWidth,168);
+        				settingDefaultWidth();
 
         			}
         			break;
@@ -237,3 +178,42 @@ $(document).ready(function () {
         });
 
 
+var settingDefaultWidth=function(){
+						$(".slide-nav-items a").css("display","");
+        				$(".slide-nav").width(150);
+        				slideNavWidth=$(".slide-nav").width();
+        				engineWidth=$(window).width()-slideNavWidth;
+        				$("#engine").width(engineWidth);
+        				$("#engine").height(engineHeight);
+        				$("#engine").css("margin-left","");
+        				$(".slide-nav-items").css("padding-left","20px");
+        				isDefaultWidth="default-width";
+        				setCookie("width",isDefaultWidth,168);
+}
+
+var changeDefaultWidth=function(){
+						$(".slide-nav-items a").css("display","none");
+        				$(".slide-nav").width(60);
+        				slideNavWidth=$(".slide-nav").width();
+        				engineWidth=$(window).width()-slideNavWidth;
+        				$("#engine").width(engineWidth);
+        				$("#engine").height(engineHeight);
+        				$("#engine").css("margin-left","-90px");
+        				$(".slide-nav-items").css("padding-left","12px");
+        				isDefaultWidth="change-width";
+        				setCookie("width",isDefaultWidth,168);
+}
+
+var settingFont=function(fontKind){
+	$("body").css("font-family",fontKind);
+    setCookie("font",fontKind,168);
+}
+
+var settingSkin=function(myURL,aColor){
+					$(".public-header").css("background",myURL);
+        			$(".slide-nav").css("background",myURL);
+        			$(".sub-nav").css("background",myURL);
+        			$("a").css("color",aColor);
+        			setCookie("skin",myURL,168);
+        			setCookie("aColor",aColor,168);
+}
