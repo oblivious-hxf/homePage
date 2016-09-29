@@ -60,6 +60,12 @@
 					<li class="sub-list"><a href="#list-sort-setting"><img id="sub-list-sort" style='vertical-align:middle' src="image/changewidth.png"/>排列顺序</a></li>
                 </ul>
                  </li>
+
+
+            <li class="mainlevel-weather">
+            	<div id="tp-weather-widget"></div>
+
+            </li>
              
         </ul>
 </div>
@@ -108,6 +114,11 @@
 		<li class="slide-nav-items">
 			<img src="http://static.hdslb.com/images/favicon.ico" title="哔哩哔哩"/>
 			<a data="http://www.bilibili.com/">哔哩哔哩</a>
+		</li>
+
+		<li class="slide-nav-items">
+		<img src="http://www.w3schools.com/favicon.ico" title="W3School"/>
+		<a data="http://www.w3schools.com/">W3School</a>
 		</li>
 
 		<li class="slide-nav-items">
@@ -243,6 +254,21 @@
     $( "#sortable" ).disableSelection();
   });
   </script>
+  <script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.thinkpage.cn/widget/chameleon.js"))</script>
+<script>tpwidget("init", {
+    "flavor": "slim",
+    "location": "WS0E9D8WN298",
+    "geolocation": "enabled",
+    "language": "zh-chs",
+    "unit": "c",
+    "theme": "chameleon",
+    "container": "tp-weather-widget",
+    "bubble": "enabled",
+    "alarmType": "badge",
+    "uid": "U02E4B7973",
+    "hash": "223e18840d15fb5a0d4755cbbe5cabed"
+});
+tpwidget("show");</script>
 </body>
 
 </html>

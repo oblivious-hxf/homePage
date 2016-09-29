@@ -115,15 +115,15 @@ $(document).ready(function () {
         			break;
 
         			case "#blue-skin":
-        			settingSkin("url(image/blue-skin.jpg)","#000");
+        			settingSkin("#00a59e","#000");
         			break;
 
         			case "#black-skin":
-        			settingSkin("url(image/black-skin.jpg)","#e8e8e8");
+        			settingSkin("#0f0f0f","#e8e8e8");
         			break;
 
         			case "#bi-color-skin":
-        			settingSkin("url(image/bi-color.jpg)","#000");
+        			settingSkin("#168332","#000");
         			break;
 
         			case "#wallpaper-skin":

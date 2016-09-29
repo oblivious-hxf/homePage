@@ -19,6 +19,11 @@ a{
 .public-header{margin:0px auto; display:block; width:100%; height:34px;background:#e5eecc;position: absolute;z-index: 3}
 .nav {display:block;}
 .mainlevel {float:left; text-align:center; display:block;}
+.mainlevel-weather{
+	float: right;
+	margin-right: 10px;
+	margin-top: 3px;
+}
 .mainlevel a {text-decoration:none; line-height:34px; height:34px; text-align:center; padding:0 15px; display:block;}
 .mainlevel a:hover { text-decoration:none;}
 .mainlevel li {float:left;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
